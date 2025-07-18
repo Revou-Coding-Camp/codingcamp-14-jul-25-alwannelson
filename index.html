@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .active-nav::after {
+        content: '🔽';
+        display: block;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <div class="text-xl font-bold">🚀 Company</div>
+        <nav>
+          <ul class="flex gap-6 text-sm font-medium" id="navbar">
+            <li><a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Home</a></li>
+            <li><a href="#profile" class="nav-link text-gray-700 hover:text-blue-600">Our Profile</a></li>
+            <li><a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Message Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Home -->
+    <section id="home" class="pt-32 pb-20 px-6 min-h-screen flex items-center justify-center">
+      <div class="text-center max-w-xl w-full">
+        <h1 id="greeting" class="text-2xl font-semibold mb-4">Hi there, Welcome To Website</h1>
+        <div id="nameForm" class="space-y-4">
+          <input
+            type="text"
+            id="nameInput"
+            placeholder="Masukkan Namamu..."
+            class="w-full border px-4 py-2 rounded"
+          />
+          <button onclick="setName()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Submit
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Profile -->
+    <section id="profile" class="py-20 px-6 bg-white min-h-screen">
+      <div class="max-w-5xl mx-auto text-center">
+        <img
+          src="https://via.placeholder.com/1000x300"
+          alt="Banner"
+          class="w-full rounded-lg mb-8 shadow"
+        />
+        <h2 class="text-2xl font-bold mb-4">Tentang Perusahaan</h2>
+        <p class="mb-6">
+          Kami adalah perusahaan digital kreatif yang berdedikasi membantu bisnis tumbuh melalui teknologi dan desain inovatif.
+        </p>
+        <h3 class="text-xl font-semibold mb-2">Visi dan Misi</h3>
+        <ul class="list-disc list-inside text-left max-w-xl mx-auto">
+          <li>Menjadi penyedia solusi teknologi terbaik di Asia Tenggara.</li>
+          <li>Mengembangkan produk yang berdampak positif pada masyarakat.</li>
+          <li>Membangun ekosistem digital yang berkelanjutan.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 bg-gray-100 min-h-screen">
+      <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-center">Message Us</h2>
+        <form onsubmit="return validateForm()" class="space-y-4">
+          <input type="text" placeholder="Your Name" required class="w-full border px-4 py-2 rounded" />
+          <input type="email" placeholder="Your Email" required class="w-full border px-4 py-2 rounded" />
+          <textarea placeholder="Your Message" required class="w-full border px-4 py-2 rounded"></textarea>
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">
+            Send
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
