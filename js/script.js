@@ -1,4 +1,3 @@
-// Navbar Active + Panah
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
@@ -24,7 +23,6 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
-// Set Nama & Ganti Greeting
 function setName() {
   const name = document.getElementById("nameInput").value.trim();
   if (name !== "") {
@@ -33,8 +31,21 @@ function setName() {
   }
 }
 
-// Message Form
+
 function validateForm() {
   alert("Pesan kamu berhasil dikirim!");
-  return false; // prevent reload
+  return false;
 }
+
+
+  // Hanya scroll ke atas kalau URL mengandung hash
+  window.addEventListener("load", () => {
+    if (window.location.hash) {
+      // Hilangkan hash dari URL tanpa reload
+      history.replaceState("", document.title, window.location.pathname + window.location.search);
+      // Scroll ke atas
+      window.scrollTo(0, 0);
+    }
+  });
+
+
